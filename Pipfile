@@ -25,7 +25,9 @@ mypy = "*"
 pytest-cov = "*"
 pydocstyle = "*"
 bandit = "*"
+pyinstaller = "*"
 
 [packages]
 pbr = ">=4.0"
 typing = {markers="python_version < '3.5'"}
+gooey = "*"

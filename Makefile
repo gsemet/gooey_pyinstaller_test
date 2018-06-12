@@ -6,8 +6,10 @@
 
 MODULES:=gooey_pyinstaller_test
 PACKAGE_NAME:=gooey_pyinstaller_test
-PIP:=/usr/bin/env python3 -m pip
 PIPENV:=pipenv
+EXECUTABLE:=gooey_pyinstaller_test
+PYTHON:=/usr/local/bin/env python3
+PIP:=$(PYTHON) -m pip
 
 # ==================================================================================================
 # do-it-all targets
@@ -27,7 +29,8 @@ ensure-pipenv:
 	@echo "ensure your local python install is in your PATH"
 
 pipenv-install-dev:
-	$(PIPENV) install --dev
+	$(PIPENV) install --dev --python $(PYTHON)
+	$(PIPENV) run pip install -e .
 
 ln-venv: clean-ln-venv
 	# use that to configure a symbolic link to the virtualenv in .venv
@@ -139,6 +142,8 @@ wheel:
 clean-dist:
 	rm -rfv build dist/
 
+pyinstaller:
+	pipenv run pyinstaller build.spec
 
 # ==================================================================================================
 # Misc targets
@@ -159,7 +164,6 @@ requirements:
 	# needed until PBR supports `Pipfile`
 	# Freeze requirements for applications
 	$(PIPENV) run pipenv_to_requirements --freeze
-
 
 update-recreate: update style check test
 
@@ -250,7 +254,7 @@ docs-open:
 
 run:
 	# add you run commands here
-	$(PIPENV) run gooey_pyinstaller_test
+	$(PIPENV) run $(EXECUTABLE)
 
 
 # ==================================================================================================
