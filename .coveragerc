@@ -1,0 +1,8 @@
+[run]
+branch = True
+source = gooey_pyinstaller_test
+
+[report]
+ignore_errors = True
+omit =
+    gooey_pyinstaller_test/tests/*
