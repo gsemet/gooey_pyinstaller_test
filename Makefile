@@ -23,7 +23,7 @@ dev: clean-ln-venv ensure-pipenv pipenv-install-dev requirements ln-venv
 # ==================================================================================================
 
 ensure-pipenv:
-	$(PIP) install --user --upgrade 'pipenv<=11.10.1' 'pip>=10'
+	$(PIP) install --user --upgrade 'pipenv>=11.10.1' 'pip>=10'
 	@echo "ensure your local python install is in your PATH"
 
 pipenv-install-dev:
@@ -94,7 +94,7 @@ mypy:
 
 bandit:
 	pipenv run bandit -c .bandit.yml -r $(MODULES)
-￼
+
 pydocstyle:
 	pipenv run pydocstyle $(MODULES)
 
@@ -159,7 +159,7 @@ requirements:
 	# needed until PBR supports `Pipfile`
 	# Freeze requirements for applications
 	$(PIPENV) run pipenv_to_requirements --freeze
-	
+
 
 update-recreate: update style check test
 
@@ -213,7 +213,7 @@ clean: clean-dist clean-docs clean-mypy clean-ln-venv
 	find . -name '*.egg-info'  -exec rm -rf {} \; || true
 	find . -name "*.pyc" -exec rm -f {} \; || true
 	rm -rf .pytest_cache || true
-	
+
 
 
 # ==================================================================================================
