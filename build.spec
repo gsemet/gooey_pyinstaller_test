@@ -1,8 +1,8 @@
 
 import gooey
 gooey_root = os.path.dirname(gooey.__file__)
-gooey_languages = None # Tree(os.path.join(gooey_root, 'languages'), prefix = 'gooey/languages')
-gooey_images = None # Tree(os.path.join(gooey_root, 'images'), prefix = 'gooey/images')
+gooey_languages = Tree(os.path.join(gooey_root, 'languages'), prefix = 'gooey/languages')
+gooey_images = Tree(os.path.join(gooey_root, 'images'), prefix = 'gooey/images')
 
 a = Analysis(['gooey_pyinstaller_test/main.py'],
              pathex=['.'],
@@ -22,7 +22,7 @@ exe = EXE(pyz,
           options,
           gooey_languages, # Add them in to collected files
           gooey_images, # Same here.
-          name='CHANGE_ME',
+          name='gooey_pyinstaller_test-mac',
           debug=False,
           strip=None,
           upx=True,

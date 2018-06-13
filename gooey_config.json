@@ -1,6 +1,6 @@
 {
   "language": "english",
-  "target": "'/usr/local/bin/python3' -u './gooey_pyinstaller_test/main.py'",
+  "target": "'./dist/CHANGE_ME'",
   "program_name": "Widget Demo",
   "program_description": "Example application to show Gooey's various widgets",
   "sidebar_title": "Actions",
@@ -22,7 +22,7 @@
   "manual_start": false,
   "monospace_display": false,
   "image_dir": "::gooey/default",
-  "language_dir": "/Users/gaetan/Library/Python/3.6/lib/python/site-packages/gooey/languages",
+  "language_dir": "/var/folders/dk/cd3bn7_n1n9dkncxp08h5n9m0000gn/T/_MEI8Lgjbr/gooey/languages",
   "progress_regex": null,
   "progress_expr": null,
   "disable_progress_bar_animation": false,
@@ -47,7 +47,7 @@
   "error_color": "#ea7878",
   "layout": "standard",
   "widgets": {
-    "main.py": {
+    "CHANGE_ME": {
       "command": "::gooey/default",
       "contents": [
         {
@@ -471,7 +471,7 @@
               }
             },
             {
-              "id": "1c3c95d9-ecc9-4883-b74e-dac0147bfce1",
+              "id": "c5bd95c0-7af8-4d39-836b-dc76cd4f7a82",
               "type": "RadioGroup",
               "cli_type": "optional",
               "group_name": "Choose Option",

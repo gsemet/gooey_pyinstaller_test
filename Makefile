@@ -8,7 +8,7 @@ MODULES:=gooey_pyinstaller_test
 PACKAGE_NAME:=gooey_pyinstaller_test
 PIPENV:=pipenv
 EXECUTABLE:=gooey_pyinstaller_test
-PYTHON:=/usr/local/bin/env python3
+PYTHON:=$(shell which python3)
 PIP:=$(PYTHON) -m pip
 
 # ==================================================================================================
