@@ -13,7 +13,7 @@
 gooey==1.0.0
 olefile==0.45.1
 pbr==4.0.4
-pillow==4.3.0
+pillow==9.0.1
 psutil==5.4.2
 six==1.11.0
 typing==3.6.4
